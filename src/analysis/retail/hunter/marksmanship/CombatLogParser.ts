@@ -26,7 +26,6 @@ import GlobalCooldown from './modules/core/GlobalCooldown';
 import SpellUsable from './modules/core/SpellUsable';
 import AlwaysBeCasting from './modules/features/AlwaysBeCasting';
 import CooldownThroughputTracker from './modules/features/CooldownThroughputTracker';
-import EagletalonsTrueFocus from './modules/talents/EagletalonsTrueFocus';
 import SerpentstalkersTrickery from './modules/talents/SerpentstalkersTrickery';
 import SurgingShots from './modules/talents/SurgingShots';
 import Focus from './modules/resources/Focus';
@@ -49,8 +48,8 @@ import Streamline from './modules/talents/Streamline';
 import Volley from './modules/talents/Volley';
 import AimedShotPrepullNormalizer from './normalizers/AimedShotPrepullNormalizer';
 import Deathblow from './modules/talents/Deathblow';
-import T29MMTier2P from './modules/items/T29MMTier2P';
-import T29MMTier4P from './modules/items/T29MMTier4P';
+import MMTier2P from './modules/items/MMTier2P';
+import MMTier4P from './modules/items/MMTier4P';
 import FoundationGuide from 'interface/guide/foundation/FoundationGuide';
 import OvinaxMercurialEgg from 'parser/retail/modules/items/thewarwithin/trinkets/OvinaxMercurialEgg';
 import MadQueensMandate from 'parser/retail/modules/items/thewarwithin/trinkets/MadQueensMandate';
@@ -110,7 +109,6 @@ class CombatLogParser extends CoreCombatLogParser {
     deathblow: Deathblow,
     surgingShots: SurgingShots,
     serpentstalkersTrickery: SerpentstalkersTrickery,
-    eagletalonsTrueFocus: EagletalonsTrueFocus,
 
     //Shared Talents
     rejuvenatingWind: RejuvenatingWind,
@@ -125,8 +123,8 @@ class CombatLogParser extends CoreCombatLogParser {
     blackArrow: BlackArrow,
 
     // items
-    t292p: T29MMTier2P,
-    t294p: T29MMTier4P,
+    mmTier2P: MMTier2P,
+    mmTier4P: MMTier4P,
     ovinaxMercurialEgg: OvinaxMercurialEgg,
     madQueensMandate: MadQueensMandate,
     skardynsGrace: SkardynsGrace,

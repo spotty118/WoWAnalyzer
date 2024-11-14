@@ -707,6 +707,21 @@ const spells = {
     name: 'T30 4P',
     icon: 'ability_druid_ferociousbite',
   },
+
+  //TWW Lightless 2p
+  TWW_LIGHTLESS_2P_MM: {
+    id: 453648,
+    name: 'Hunter MM Lightless 2 Piece Set',
+    icon: 'trade_engineering',
+  },
+
+  //TWW Lightless 4p
+  TWW_LIGHTLESS_4P_MM: {
+    id: 453650,
+    name: 'Hunter MM Lightless 4 Piece Set',
+    icon: 'trade_engineering',
+  },
+
   //endregion
 } satisfies Record<string, Spell>;
 

@@ -9,6 +9,8 @@ import BaseChecklist from 'parser/shared/modules/features/Checklist/Module';
 
 import AlwaysBeCasting from '../features/AlwaysBeCasting';
 import Component from './Component';
+import MMTier2P from '../items/MMTier2P';
+import MMTier4P from '../items/MMTier4P';
 
 class Checklist extends BaseChecklist {
   static dependencies = {
@@ -35,6 +37,9 @@ class Checklist extends BaseChecklist {
     focusGeneratorDetails: FocusDetails,
     focusCapTracker: FocusCapTracker,
     //endregion
+
+    mmTier2P: MMTier2P,
+    mmTier4P: MMTier4P,
   };
 
   //region Core
