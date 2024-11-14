@@ -1,11 +1,9 @@
 import {
-  AMurderOfCrows,
   Barrage,
   BindingShot,
   BornToBeWild,
   CancelledCasts,
   Channeling,
-  DeathChakrams,
   DeathTracker,
   FocusDetails,
   FocusTracker,
@@ -13,7 +11,6 @@ import {
   NaturalMending,
   RejuvenatingWind,
   SpellFocusCost,
-  SteelTrap,
   Trailblazer,
   TranquilizingShot,
   WailingArrow,
@@ -47,7 +44,6 @@ import ChimaeraShot from './modules/talents/ChimaeraShot';
 import ExplosiveShot from '../shared/talents/ExplosiveShot';
 import LockAndLoad from './modules/talents/LockAndLoad';
 import MasterMarksman from '../shared/talents/MasterMarksman';
-import SerpentSting from '../shared/talents/SerpentSting';
 import SteadyFocus from './modules/talents/SteadyFocus';
 import Streamline from './modules/talents/Streamline';
 import Volley from './modules/talents/Volley';
@@ -55,8 +51,15 @@ import AimedShotPrepullNormalizer from './normalizers/AimedShotPrepullNormalizer
 import Deathblow from './modules/talents/Deathblow';
 import T29MMTier2P from './modules/items/T29MMTier2P';
 import T29MMTier4P from './modules/items/T29MMTier4P';
+import FoundationGuide from 'interface/guide/foundation/FoundationGuide';
+import OvinaxMercurialEgg from 'parser/retail/modules/items/thewarwithin/trinkets/OvinaxMercurialEgg';
+import MadQueensMandate from 'parser/retail/modules/items/thewarwithin/trinkets/MadQueensMandate';
+import SkardynsGrace from 'parser/retail/modules/items/thewarwithin/trinkets/SkardynsGrace';
+import BlackArrow from '../shared/talents/BlackArrow';
 
 class CombatLogParser extends CoreCombatLogParser {
+  static guide = FoundationGuide;
+
   static specModules = {
     // Core statistics
     abilities: Abilities,
@@ -111,22 +114,22 @@ class CombatLogParser extends CoreCombatLogParser {
 
     //Shared Talents
     rejuvenatingWind: RejuvenatingWind,
-    deathChakrams: DeathChakrams,
     tranquilizingShot: TranquilizingShot,
     trailblazer: Trailblazer,
     naturalMending: NaturalMending,
     bornToBeWild: BornToBeWild,
-    aMurderOfCrows: AMurderOfCrows,
     explosiveShot: ExplosiveShot,
     masterMarksman: MasterMarksman,
     wailingArrow: WailingArrow,
-    steelTrap: SteelTrap,
-    serpentSting: SerpentSting,
     barrage: Barrage,
+    blackArrow: BlackArrow,
 
     // items
     t292p: T29MMTier2P,
     t294p: T29MMTier4P,
+    ovinaxMercurialEgg: OvinaxMercurialEgg,
+    madQueensMandate: MadQueensMandate,
+    skardynsGrace: SkardynsGrace,
 
     // There's no throughput benefit from casting Arcane Torrent on cooldown
     arcaneTorrent: [ArcaneTorrent, { castEfficiency: null }] as const,
