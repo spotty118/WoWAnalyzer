@@ -2545,3 +2545,8 @@ export const Yellot: Contributor = {
     },
   ],
 };
+export const Faultygaming: Contributor = {
+  nickname: 'Faulty',
+  github: 'Faultygaming',
+  discord: 'faultygaming',
+};
