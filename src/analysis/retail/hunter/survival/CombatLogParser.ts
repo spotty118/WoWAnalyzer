@@ -39,7 +39,14 @@ import Lunge from './modules/talents/Lunge';
 import GrenadeJuggler from './modules/talents/GrenadeJuggler';
 import VipersVenom from './modules/talents/VipersVenom';
 import FuryOfTheEagle from './modules/talents/FuryOfTheEagle';
+import FocusGraph from './modules/guide/sections/resources/FocusGraph';
+import Guide from './modules/guide/Guide';
+import SurvivalOfTheFittest from '../shared/talents/SurvivalOfTheFittest';
+import ExhilarationTiming from './modules/guide/sections/defensives/Exhiliration';
+import HowlOfThePack from '../shared/HowlOfThePack';
+
 class CombatLogParser extends CoreCombatLogParser {
+  static guide = Guide;
   static specModules = {
     // Core statistics
     abilities: Abilities,
@@ -58,6 +65,10 @@ class CombatLogParser extends CoreCombatLogParser {
     focusCapTracker: FocusCapTracker,
     focus: Focus,
     survivalFocusUsage: SurvivalFocusUsage,
+
+    //Guide
+    focusGraph: FocusGraph,
+    exhilarationTiming: ExhilarationTiming,
 
     //Normalizers
     tipOfTheSpearNormalizer: TipOfTheSpearNormalizer,
@@ -80,6 +91,7 @@ class CombatLogParser extends CoreCombatLogParser {
     grenadeJuggler: GrenadeJuggler,
     vipersVenom: VipersVenom,
     furyOfTheEagle: FuryOfTheEagle,
+    howlOfThePack: HowlOfThePack,
 
     //Shared Talents
     bindingShot: BindingShot,
@@ -91,6 +103,7 @@ class CombatLogParser extends CoreCombatLogParser {
     rejuvenatingWind: RejuvenatingWind,
     trailblazer: Trailblazer,
     tranquilizingShot: TranquilizingShot,
+    SurvivalOfTheFittest: SurvivalOfTheFittest,
 
     // Survival's throughput benefit isn't as big as for other classes
     arcaneTorrent: [ArcaneTorrent, { castEfficiency: 0.5 }] as const,
