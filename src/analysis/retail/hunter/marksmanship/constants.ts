@@ -82,6 +82,8 @@ export const LNL_COST_MULTIPLIER = 0;
 export const SERPENT_STING_MM_BASE_DURATION = 18000;
 //Serpent Sting pandemics at 30%
 export const SERPENT_STING_MM_PANDEMIC = 0.3;
+//Tactial Reload reduces cooldown of Aimed Shot and Rapid Fire by 10%
+export const TACTICAL_RELOAD_CDR_REDUCTION = 0.1;
 //endregion
 
 //region Resources
