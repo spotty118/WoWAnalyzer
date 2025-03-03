@@ -8,7 +8,7 @@ import STATISTIC_ORDER from 'parser/ui/STATISTIC_ORDER';
 import PowerWordShield from './PowerWordShield';
 import { TIERS } from 'game/TIERS';
 
-class AegisOfWrath extends Analyzer {
+class EternalBarrier extends Analyzer {
   static dependencies = {
     powerWordShield: PowerWordShield,
   };
@@ -20,7 +20,7 @@ class AegisOfWrath extends Analyzer {
 
     // The math with the Vault of the Incarnates 4p bonus makes the calculation of this module innacurate.
     this.active =
-      this.selectedCombatant.hasTalent(TALENTS_PRIEST.AEGIS_OF_WRATH_TALENT) &&
+      this.selectedCombatant.hasTalent(TALENTS_PRIEST.ETERNAL_BARRIER_TALENT) &&
       !this.selectedCombatant.has4PieceByTier(TIERS.DF1);
 
     if (!this.active) {
@@ -36,7 +36,7 @@ class AegisOfWrath extends Analyzer {
         category={STATISTIC_CATEGORY.TALENTS}
       >
         <>
-          <BoringSpellValueText spell={TALENTS_PRIEST.AEGIS_OF_WRATH_TALENT}>
+          <BoringSpellValueText spell={TALENTS_PRIEST.ETERNAL_BARRIER_TALENT}>
             <ItemHealingDone amount={this.powerWordShield.aegisOfWrathValue} /> <br />
           </BoringSpellValueText>
         </>
@@ -45,4 +45,4 @@ class AegisOfWrath extends Analyzer {
   }
 }
 
-export default AegisOfWrath;
+export default EternalBarrier;

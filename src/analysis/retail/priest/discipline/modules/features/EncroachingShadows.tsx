@@ -35,7 +35,7 @@ type DotInformation =
     }
   | Record<string, never>;
 
-class PurgeTheWicked extends Analyzer {
+class EncroachingShadows extends Analyzer {
   protected enemies!: Enemies;
   protected abilityTracker!: AbilityTracker;
 
@@ -65,14 +65,12 @@ class PurgeTheWicked extends Analyzer {
 
   constructor(options: Options) {
     super(options);
-    if (this.selectedCombatant.hasTalent(TALENTS_PRIEST.PURGE_THE_WICKED_TALENT)) {
-      this.dotSpell = SPELLS.PURGE_THE_WICKED_BUFF;
-      if (this.selectedCombatant.hasTalent(TALENTS_PRIEST.REVEL_IN_PURITY_TALENT)) {
+    this.dotSpell = SPELLS.SHADOW_WORD_PAIN;
+    if (this.selectedCombatant.hasTalent(TALENTS_PRIEST.ENCROACHING_SHADOWS_TALENT)) {
+      if (this.selectedCombatant.hasTalent(TALENTS_PRIEST.REVEL_IN_DARKNESS_TALENT)) {
         this.revelInPurityActive = true;
         this.revelInPurityIncrease = 0.05;
       }
-    } else {
-      this.dotSpell = SPELLS.SHADOW_WORD_PAIN;
     }
 
     this.painAndSufferingActive = this.selectedCombatant.hasTalent(
@@ -193,32 +191,20 @@ class PurgeTheWicked extends Analyzer {
   statistic() {
     const uptime = this.uptime || 0;
 
-    if (this.dotSpell === SPELLS.PURGE_THE_WICKED_BUFF) {
-      return (
-        <Statistic
-          size="flexible"
-          category={STATISTIC_CATEGORY.TALENTS}
-          position={STATISTIC_ORDER.CORE(5)}
-          tooltip={`The additional dots contributed ${formatThousands(
-            this.ptwCleaveDamage,
-          )} damage.`}
-        >
-          <BoringSpellValueText spell={TALENTS_PRIEST.PURGE_THE_WICKED_TALENT}>
-            {formatPercentage(uptime)}% Uptime <br />
-            {this.extraPTWs} Extra DOTs
-            <br />
-          </BoringSpellValueText>
-        </Statistic>
-      );
-    } else {
-      return (
-        <Statistic size="flexible" category={STATISTIC_CATEGORY.GENERAL}>
-          <BoringSpellValueText spell={SPELLS.SHADOW_WORD_PAIN}>
-            {formatPercentage(uptime)}% Uptime
-          </BoringSpellValueText>
-        </Statistic>
-      );
-    }
+    return (
+      <Statistic
+        size="flexible"
+        category={STATISTIC_CATEGORY.TALENTS}
+        position={STATISTIC_ORDER.CORE(5)}
+        tooltip={`The additional dots contributed ${formatThousands(this.ptwCleaveDamage)} damage.`}
+      >
+        <BoringSpellValueText spell={SPELLS.SHADOW_WORD_PAIN}>
+          {formatPercentage(uptime)}% Uptime <br />
+          {this.extraPTWs} Extra DOTs
+          <br />
+        </BoringSpellValueText>
+      </Statistic>
+    );
   }
 
   get guideSubsection(): JSX.Element {
@@ -226,7 +212,7 @@ class PurgeTheWicked extends Analyzer {
       <>
         <p>
           <b>
-            Maintain <SpellLink spell={TALENTS_PRIEST.PURGE_THE_WICKED_TALENT} />
+            Maintain <SpellLink spell={SPELLS.SHADOW_WORD_PAIN} />
           </b>{' '}
           at all times. It is an efficient source of damage for atonement, and is the sole source of
           procs for <SpellLink spell={TALENTS_PRIEST.POWER_OF_THE_DARK_SIDE_TALENT} />. The uptime
@@ -250,15 +236,15 @@ class PurgeTheWicked extends Analyzer {
   }
 
   get uptimeHistory() {
-    return this.enemies.getDebuffHistory(SPELLS.PURGE_THE_WICKED_BUFF.id);
+    return this.enemies.getDebuffHistory(SPELLS.SHADOW_WORD_PAIN.id);
   }
 
   subStatistic() {
     return uptimeBarSubStatistic(this.owner.fight, {
-      spells: [TALENTS_PRIEST.PURGE_THE_WICKED_TALENT],
+      spells: [SPELLS.SHADOW_WORD_PAIN],
       uptimes: this.uptimeHistory,
     });
   }
 }
 
-export default PurgeTheWicked;
+export default EncroachingShadows;
