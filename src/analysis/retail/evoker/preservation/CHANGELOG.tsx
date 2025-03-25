@@ -5,7 +5,8 @@ import { TALENTS_EVOKER } from 'common/TALENTS';
 
 // prettier-ignore
 export default [
-  change(date(2025, 3, 25), <>Implement <SpellLink spell={TALENTS_EVOKER.FLAME_SIPHON_TALENT}/> module</>, Vollmer), 
+  change(date(2025, 3, 25), <>Implement <SpellLink spell={TALENTS_EVOKER.FLAME_SIPHON_TALENT}/> module</>, Vollmer),
+  change(date(2025, 3, 18), <>DB no longer counts non-player targets </>, Capybara),
   change(date(2025, 3, 18), <>Updated DB target count for 6+ targets </>, Capybara),
   change(date(2025, 3, 2), <>Bump to 11.1.0</>, Harrek),
   change(date(2025, 3, 2), <>Implemented T33 Tierset module</>, Harrek),
