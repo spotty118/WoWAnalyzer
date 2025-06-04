@@ -9,26 +9,19 @@ import { RoundedPanel } from 'interface/guide/components/GuideDivs';
 import { GUIDE_CORE_EXPLANATION_PERCENT } from '../../guide/Guide';
 import RESOURCE_TYPES from 'game/RESOURCE_TYPES';
 
-class HolyShock extends Analyzer {
+class Judgment extends Analyzer {
   get guideSubsection(): JSX.Element {
     const explanation = (
       <p>
         <b>
-          <SpellLink spell={TALENTS.HOLY_SHOCK_TALENT} />
+          <SpellLink spell={SPELLS.JUDGMENT_CAST_HOLY} />
         </b>{' '}
-        is the driving force behind the whole specialization. It is your main{' '}
-        <ResourceLink id={RESOURCE_TYPES.HOLY_POWER.id} /> generator, procs{' '}
-        <SpellLink spell={SPELLS.INFUSION_OF_LIGHT} />, and does great single-target healing due to
-        talents like <SpellLink spell={TALENTS.AWESTRUCK_TALENT} />,{' '}
-        <SpellLink spell={TALENTS.LIGHT_OF_THE_MARTYR_TALENT} />,{' '}
-        <SpellLink spell={TALENTS.DIVINE_GLIMPSE_TALENT} />,{' '}
-        <SpellLink spell={TALENTS.RECLAMATION_TALENT} /> and{' '}
-        <SpellLink spell={TALENTS.OVERFLOWING_LIGHT_TALENT} />. Your usage of{' '}
-        <SpellLink spell={TALENTS.HOLY_SHOCK_TALENT} /> is further made available via{' '}
-        <SpellLink spell={TALENTS.LIGHTS_CONVICTION_TALENT} />,{' '}
-        <SpellLink spell={TALENTS.GLORIOUS_DAWN_TALENT} />,{' '}
-        <SpellLink spell={TALENTS.CRUSADERS_MIGHT_TALENT} />, and{' '}
-        <SpellLink spell={TALENTS.IMBUED_INFUSIONS_TALENT} />.
+        is one of your primary damaging spells but is also your highest priority healing spell
+        (alongside <SpellLink spell={TALENTS.HOLY_SHOCK_TALENT} />) due to its synergy with
+        generating <ResourceLink id={RESOURCE_TYPES.HOLY_POWER.id} />,{' '}
+        <SpellLink spell={TALENTS.GREATER_JUDGMENT_HOLY_TALENT} /> and{' '}
+        <SpellLink spell={SPELLS.INFUSION_OF_LIGHT} />, and{' '}
+        <SpellLink spell={TALENTS.EMPYREAN_LEGACY_TALENT} />.
       </p>
     );
 
@@ -36,7 +29,7 @@ class HolyShock extends Analyzer {
       <div>
         <RoundedPanel>
           <strong>
-            <SpellLink spell={TALENTS.HOLY_SHOCK_TALENT} /> cast efficiency
+            <SpellLink spell={SPELLS.JUDGMENT_CAST_HOLY} /> cast efficiency
           </strong>
           <div className="flex-main chart" style={{ padding: 15 }}>
             {this.subStatistic()}
@@ -51,7 +44,7 @@ class HolyShock extends Analyzer {
   subStatistic() {
     return (
       <CastEfficiencyBar
-        spellId={TALENTS.HOLY_SHOCK_TALENT.id}
+        spellId={SPELLS.JUDGMENT_CAST_HOLY.id}
         gapHighlightMode={GapHighlight.FullCooldown}
         minimizeIcons
         slimLines
@@ -61,4 +54,4 @@ class HolyShock extends Analyzer {
   }
 }
 
-export default HolyShock;
+export default Judgment;
