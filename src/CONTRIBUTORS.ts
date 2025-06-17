@@ -2728,3 +2728,21 @@ export const Leftyxiv: Contributor = {
     },
   ],
 };
+
+export const Brandrewsss: Contributor = {
+  nickname: 'Brandrews',
+  github: 'brandrewssss',
+  avatar: avatar('brandrews.jpeg'),
+  mains: [
+    {
+      name: 'Brandrews',
+      spec: SPECS.MARKSMANSHIP_HUNTER,
+      link: 'https://worldofwarcraft.blizzard.com/en-us/character/us/thrall/brandrews',
+    },
+    {
+      name: 'Brandrewsdk',
+      spec: SPECS.UNHOLY_DEATH_KNIGHT,
+      link: 'https://worldofwarcraft.blizzard.com/en-us/character/us/thrall/brandrewsdk',
+    },
+  ],
+};
