@@ -5,6 +5,7 @@ import {
   CancelledCasts,
   Channeling,
   DeathTracker,
+  FocusCapTracker,
   FocusDetails,
   FocusTracker,
   KillShot,
@@ -71,6 +72,7 @@ class CombatLogParser extends CoreCombatLogParser {
     //Resources
     focusTracker: FocusTracker,
     focusDetails: FocusDetails,
+    focusCapTracker: FocusCapTracker,
     spellFocusCost: SpellFocusCost,
     focus: Focus,
     marksmanshipFocusUsage: MarksmanshipFocusUsage,
