@@ -27,6 +27,8 @@ import BuilderUse from './modules/core/BuilderUse';
 import Guide from './Guide';
 import { MeleeUptimeAnalyzer } from 'interface/guide/foundation/analyzers/MeleeUptimeAnalyzer';
 import SPELLS from 'common/SPELLS';
+import DivineHammerNormalizer from './normalizers/DivineHammerNormalizer';
+import Expurgation from './modules/talents/Expurgation';
 
 class CombatLogParser extends CoreCombatLogParser {
   static guide = Guide;
@@ -37,6 +39,9 @@ class CombatLogParser extends CoreCombatLogParser {
 
     artOfWar: ArtOfWar,
     artOfWarProbability: ArtOfWarProbability,
+
+    // Normalizers
+    divineHammerNormalizer: DivineHammerNormalizer,
 
     // Features
     abilities: Abilities,
@@ -56,6 +61,7 @@ class CombatLogParser extends CoreCombatLogParser {
     hammerofWrathRetribution: HammerofWrathRetribution,
     empyreanPower: EmpyreanPower,
     duskAndDawn: DuskAndDawn,
+    expurgation: Expurgation,
 
     // HolyPower
     holyPowerTracker: HolyPowerTracker,
