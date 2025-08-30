@@ -13,7 +13,6 @@ import Buffs from './modules/Buffs';
 import ArtOfWar from 'analysis/retail/paladin/retribution/modules/talents/ArtOfWar';
 import ArtOfWarProbability from 'analysis/retail/paladin/retribution/modules/talents/ArtOfWarProbability';
 import BladeOfJustice from 'analysis/retail/paladin/retribution/modules/talents/BladeOfJustice';
-import Consecration from './modules/core/Consecration';
 import CrusaderStrike from './modules/core/CrusaderStrike';
 import HammerofWrathRetribution from 'analysis/retail/paladin/retribution/modules/talents/HammerofWrath';
 import ShieldOfVengeance from 'analysis/retail/paladin/retribution/modules/talents/ShieldOfVengeance';
@@ -29,6 +28,7 @@ import { MeleeUptimeAnalyzer } from 'interface/guide/foundation/analyzers/MeleeU
 import SPELLS from 'common/SPELLS';
 import DivineHammerNormalizer from './normalizers/DivineHammerNormalizer';
 import Expurgation from './modules/talents/Expurgation';
+import WakeOfAshesNormalizer from './normalizers/WakeOfAshesNormalizer';
 
 class CombatLogParser extends CoreCombatLogParser {
   static guide = Guide;
@@ -42,6 +42,7 @@ class CombatLogParser extends CoreCombatLogParser {
 
     // Normalizers
     divineHammerNormalizer: DivineHammerNormalizer,
+    wakeOfAshesNormalizer: WakeOfAshesNormalizer,
 
     // Features
     abilities: Abilities,
@@ -57,7 +58,6 @@ class CombatLogParser extends CoreCombatLogParser {
     divinePurpose: DivinePurpose,
     crusade: Crusade,
     wakeofAshes: WakeOfAshes,
-    consecration: Consecration,
     hammerofWrathRetribution: HammerofWrathRetribution,
     empyreanPower: EmpyreanPower,
     duskAndDawn: DuskAndDawn,
