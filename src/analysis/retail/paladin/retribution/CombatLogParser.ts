@@ -26,9 +26,12 @@ import BuilderUse from './modules/core/BuilderUse';
 import Guide from './Guide';
 import { MeleeUptimeAnalyzer } from 'interface/guide/foundation/analyzers/MeleeUptimeAnalyzer';
 import SPELLS from 'common/SPELLS';
-import DivineHammerNormalizer from './normalizers/DivineHammerNormalizer';
 import Expurgation from './modules/talents/Expurgation';
 import WakeOfAshesNormalizer from './normalizers/WakeOfAshesNormalizer';
+import ExecutionSentence from './modules/talents/ExecutionSentence';
+import Lightbearer from '../shared/Lightbearer';
+import InstrumentOfRetribution from './modules/core/InstrumentOfRetribution';
+import DivineHammer from './modules/talents/DivineHammer';
 
 class CombatLogParser extends CoreCombatLogParser {
   static guide = Guide;
@@ -37,11 +40,11 @@ class CombatLogParser extends CoreCombatLogParser {
     // Core
     builderUse: BuilderUse,
 
+    instrumentOfRetribution: InstrumentOfRetribution,
     artOfWar: ArtOfWar,
     artOfWarProbability: ArtOfWarProbability,
 
     // Normalizers
-    divineHammerNormalizer: DivineHammerNormalizer,
     wakeOfAshesNormalizer: WakeOfAshesNormalizer,
 
     // Features
@@ -62,6 +65,9 @@ class CombatLogParser extends CoreCombatLogParser {
     empyreanPower: EmpyreanPower,
     duskAndDawn: DuskAndDawn,
     expurgation: Expurgation,
+    executionSentence: ExecutionSentence,
+    lightBearer: Lightbearer,
+    divineHammer: DivineHammer,
 
     // HolyPower
     holyPowerTracker: HolyPowerTracker,
