@@ -198,6 +198,7 @@ const useEventParser = ({
       !import.meta.env.PROD ||
       isLoading ||
       !fight ||
+      fight.filtered ||
       !parser ||
       !parser.finished ||
       !patchInfo?.patch?.isCurrent ||
